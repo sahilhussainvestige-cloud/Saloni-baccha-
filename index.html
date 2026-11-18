@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Princess Saloni 👑💗</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Georgia,serif;
+background:linear-gradient(135deg,#ffe0ed,#fff5e8,#f4e3ff);
+color:#963e68;
+min-height:100vh;
+text-align:center;
+overflow-x:hidden;
+}
+
+.page{
+display:none;
+min-height:100vh;
+padding:25px 16px;
+align-items:center;
+justify-content:center;
+}
+
+.page.active{
+display:flex;
+animation:fade .7s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.card{
+width:100%;
+max-width:500px;
+padding:30px 22px;
+background:#ffffffdf;
+border:2px solid white;
+border-radius:30px;
+box-shadow:0 15px 40px #d879a044;
+}
+
+h1{
+font-size:43px;
+color:#d64e89;
+margin:18px 0;
+}
+
+h2{
+font-size:28px;
+color:#c34b80;
+margin:15px 0;
+}
+
+p{
+font-size:17px;
+line-height:1.8;
+margin:15px 0;
+}
+
+.crown{font-size:55px}
+
+button{
+background:linear-gradient(135deg,#ed76a6,#d94d89);
+color:white;
+border:0;
+border-radius:30px;
+padding:15px 24px;
+font-size:16px;
+font-weight:bold;
+margin:15px 5px;
+cursor:pointer;
+box-shadow:0 6px 18px #d879a055;
+}
+
+.photo{
+width:90%;
+max-width:330px;
+height:350px;
+object-fit:cover;
+border:7px solid white;
+border-radius:25px;
+box-shadow:0 10px 25px #bd689044;
+margin:18px auto;
+}
+
+.letter{
+background:#fff0f6;
+padding:20px;
+border-radius:20px;
+line-height:1.9;
+}
+
+.hearts{
+font-size:27px;
+margin:20px;
+}
+
+.footer{
+font-size:13px;
+margin-top:25px;
+color:#b77b98;
+}
+
+.spark{
+position:fixed;
+top:-30px;
+pointer-events:none;
+animation:fall linear infinite;
+color:#df6d9c;
+z-index:0;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRST PAGE -->
+<section class="page active" id="p1">
+<div class="card">
+<div class="crown">👑</div>
+
+<h1>Happy Princess Day</h1>
+<h2>My Princess Saloni 💗</h2>
+
+<p>
+Hello meri pyaari Babu! 🌸
+<br>
+Aaj tumhare liye kuch bahut special hai.
+</p>
+
+<div class="hearts">💗 🦋 🌷 💗</div>
+
+<p>Are you ready for your surprise?</p>
+
+<button onclick="go(2)">
+Open Your Surprise 🎁
+</button>
+
+<div class="footer">
+Made with love by Ankit ❤️
+</div>
+</div>
+</section>
+
+<!-- SECOND PAGE -->
+<section class="page" id="p2">
+<div class="card">
+
+<h2>My Beautiful Princess 🌷</h2>
+
+<img src="saloni1.jpg" class="photo" alt="Saloni">
+
+<p>
+Saloni, tum meri life ki sabse special person ho.
+Tumhari smile aur tumhari cute si baatein
+mere liye bahut precious hain.
+</p>
+
+<div class="hearts">💕 🌸 💕</div>
+
+<button onclick="go(3)">
+Next Surprise 🦋
+</button>
+
+</div>
+</section>
+
+<!-- THIRD PAGE -->
+<section class="page" id="p3">
+<div class="card">
+
+<h2>My Cutest Babu 🧸</h2>
+
+<img src="saloni2.jpg" class="photo" alt="Saloni">
+
+<p>
+Tum meri favourite person ho.
+Tumhare saath chhoti-chhoti baatein bhi
+special memories ban jaati hain.
+</p>
+
+<p>
+Hamesha aise hi khush rehna,
+meri princess! 👑
+</p>
+
+<button onclick="go(4)">
+Open My Letter 💌
+</button>
+
+</div>
+</section>
+
+<!-- FOURTH PAGE -->
+<section class="page" id="p4">
+<div class="card">
+
+<div class="crown">💌</div>
+
+<h1>Dear Saloni</h1>
+
+<div class="letter">
+
+<p>Meri pyaari Babu ❤️</p>
+
+<p>
+Thank you meri life mein aane ke liye.
+Tumhare aane se meri life mein bahut saari
+beautiful memories jud gayi hain.
+</p>
+
+<p>
+Kabhi hum haste hain, kabhi ladte hain,
+kabhi ek dusre ko manate hain.
+Lekin tum mere liye hamesha special rahogi.
+</p>
+
+<p>
+Main chahta hoon tumhare saare dreams poore hon.
+Tum hamesha khush raho aur tumhari smile
+kabhi kam na ho.
+</p>
+
+<p>
+You are my favourite person.
+I am lucky to have you in my life. 💗
+</p>
+
+<h2>Happy Princess Day, Babu! 👑</h2>
+
+</div>
+
+<div class="hearts">💗 🌸 🦋 🌸 💗</div>
+
+<p>
+Always Yours,<br>
+<b>Ankit ❤️</b>
+</p>
+
+<button onclick="go(1)">
+Replay Surprise ↻
+</button>
+
+</div>
+</section>
+
+<script>
+function go(n){
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
+});
+document.getElementById('p'+n).classList.add('active');
+window.scrollTo(0,0);
+}
+
+for(let i=0;i<18;i++){
+let s=document.createElement('div');
+s.className='spark';
+s.textContent=['♡','✦','♥','🌸'][i%4];
+s.style.left=Math.random()*100+'vw';
+s.style.animationDuration=(6+Math.random()*8)+'s';
+s.style.animationDelay=(-Math.random()*12)+'s';
+s.style.fontSize=(12+Math.random()*18)+'px';
+document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
